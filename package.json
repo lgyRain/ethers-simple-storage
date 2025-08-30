@@ -1,0 +1,48 @@
+{
+  "type": "module",
+  "license": "MIT",
+  "resolutions": {
+    "**/fs-extra": "11.3.1"
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "dotenv-safe": "^9.1.0",
+    "ethers": "6.15.0",
+    "fs-extra": "^11.3.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-solidity": "^2.1.0",
+    "solc": "0.8.7-fixed",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . ",
+    "run-ts": "ts-node $1",
+    "typechain": "npx typechain --target ethers-v6 \"./*.abi\""
+  },
+  "devDependencies": {
+    "@typechain/ethers-v6": "^0.5.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.3.0",
+    "typechain": "^8.3.2"
+  }
+}
